@@ -73,7 +73,7 @@ static MMPlugInManager *plugInManager = nil;
         NSLibraryDirectory, NSAllDomainsMask - NSSystemDomainMask, YES);
 
     searchPathEnum = [librarySearchPaths objectEnumerator];
-    while(currPath = [searchPathEnum nextObject]) {
+    while((currPath = [searchPathEnum nextObject]) != nil) {
         [bundleSearchPaths addObject:
             [currPath stringByAppendingPathComponent:appSupportSubpath]];
     }
@@ -82,13 +82,13 @@ static MMPlugInManager *plugInManager = nil;
         [[NSBundle mainBundle] builtInPlugInsPath]];
 
     searchPathEnum = [bundleSearchPaths objectEnumerator];
-    while(currPath = [searchPathEnum nextObject]) {
+    while((currPath = [searchPathEnum nextObject]) != nil) {
         NSDirectoryEnumerator *bundleEnum;
         NSString *currBundlePath;
         bundleEnum = [[NSFileManager defaultManager]
             enumeratorAtPath:currPath];
         if(bundleEnum) {
-            while(currBundlePath = [bundleEnum nextObject]) {
+            while((currBundlePath = [bundleEnum nextObject]) != nil) {
                 if([[currBundlePath pathExtension] isEqualToString:ext]) {
                  [allBundles addObject:[currPath
                            stringByAppendingPathComponent:currBundlePath]];
@@ -120,7 +120,7 @@ static MMPlugInManager *plugInManager = nil;
 	ASLogInfo(@"MMPluginManager loadAllPlugins");
 	
     pathEnum = [bundlePaths objectEnumerator];
-    while(currPath = [pathEnum nextObject]) {
+    while((currPath = [pathEnum nextObject]) != nil) {
 		ASLogInfo(@"MMPluginManager loadAllPlugins: %@", currPath);
         currBundle = [NSBundle bundleWithPath:currPath];
         if(currBundle) {

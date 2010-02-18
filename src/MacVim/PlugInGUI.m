@@ -202,7 +202,7 @@ NSString *MMPlugInViewPboardType = @"MMPlugInViewPboardType";
     [super dealloc];
 }
 
-- (unsigned int)splitView:(RBSplitView*)sender dividerForPoint:(NSPoint)point
+- (NSUInteger)splitView:(RBSplitView*)sender dividerForPoint:(NSPoint)point
                 inSubview:(RBSplitSubview*)subview
 {
     MMPlugInViewController *controller = [(MMPlugInView *)subview controller];
