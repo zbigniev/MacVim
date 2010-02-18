@@ -398,6 +398,7 @@ fsEventCallback(ConstFSEventStreamRef streamRef,
 {
     [NSApp setServicesProvider:self];
 #ifdef MM_ENABLE_PLUGINS
+    ASLogInfo(@"MacVim Loading Plugins");
     [[MMPlugInManager sharedManager] loadAllPlugIns];
 #endif
 

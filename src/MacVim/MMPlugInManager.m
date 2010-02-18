@@ -117,8 +117,11 @@ static MMPlugInManager *plugInManager = nil;
 
     [bundlePaths addObjectsFromArray:[self allBundles]];
 
+	ASLogInfo(@"MMPluginManager loadAllPlugins");
+	
     pathEnum = [bundlePaths objectEnumerator];
     while(currPath = [pathEnum nextObject]) {
+		ASLogInfo(@"MMPluginManager loadAllPlugins: %@", currPath);
         currBundle = [NSBundle bundleWithPath:currPath];
         if(currBundle) {
             currPrincipalClass = [currBundle principalClass];
