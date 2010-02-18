@@ -811,6 +811,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DMM_ENABLE_PLUGINS";
 				PREBINDING = NO;
+				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Debug;
 		};
