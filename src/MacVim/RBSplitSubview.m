@@ -6,6 +6,8 @@
 //  Copyright 2004-2009 Rainer Brockerhoff.
 //	Some Rights Reserved under the Creative Commons Attribution License, version 2.5, and/or the MIT License.
 //
+#import "MacVim.h" // For MM_ENABLE_PLUGINS
+
 #ifdef MM_ENABLE_PLUGINS
 
 #import "RBSplitView.h"

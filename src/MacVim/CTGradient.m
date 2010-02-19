@@ -7,6 +7,8 @@
 //  Released into public domain on 4/10/08.
 //
 //  Version: 1.8
+#import "MacVim.h" // For MM_ENABLE_PLUGINS
+
 #ifdef MM_ENABLE_PLUGINS
 
 #import "CTGradient.h"
