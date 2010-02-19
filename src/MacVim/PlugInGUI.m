@@ -30,7 +30,6 @@
 #ifdef MM_ENABLE_PLUGINS
 
 #import "PlugInGUI.h"
-#import "CTGradient.h"
 
 NSString *MMPlugInViewPboardType = @"MMPlugInViewPboardType";
 
@@ -78,9 +77,8 @@ NSString *MMPlugInViewPboardType = @"MMPlugInViewPboardType";
                                                    blue:.800
                                                   alpha:1.0];
 
-    CTGradient *grad = [CTGradient gradientWithBeginningColor:startColor
-                                                  endingColor:endColor];
-    [grad fillRect:[self bounds] angle:90];
+	NSGradient *grad = [[NSGradient alloc] initWithStartingColor:startColor endingColor:endColor];
+    [grad drawInRect:[self bounds] angle:90];
 
     MMPlugInView *dropView = [[controller container] dropView];
 
@@ -90,6 +88,7 @@ NSString *MMPlugInViewPboardType = @"MMPlugInViewPboardType";
         [[NSColor redColor] set];
         NSRectFill(insertionRect);
     }
+	[grad release];
 }
 
 - (BOOL)isOpaque
