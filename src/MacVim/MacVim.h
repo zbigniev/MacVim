@@ -17,9 +17,7 @@
 // plugins!).
 //
 //#define MM_ENABLE_PLUGINS
-#ifndef MM_ENABLE_PLUGINS
 #define MM_ENABLE_PLUGINS
-#endif
 
 // Taken from /usr/include/AvailabilityMacros.h
 #ifndef MAC_OS_X_VERSION_10_4
